@@ -1,4 +1,10 @@
-function CarItem({ data }) {
+import { useState } from 'react';
+
+function CarCard({ data }) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <li>
       <div>
@@ -18,9 +24,9 @@ function CarItem({ data }) {
         <li>{data.mileage}</li>
         <li>{data.accessories[0]}</li>
       </ui>
-      <button>Learn more</button>
+      <button onClick={handleOpen}>Learn more</button>
     </li>
   );
 }
 
-export default CarItem;
+export default CarCard;

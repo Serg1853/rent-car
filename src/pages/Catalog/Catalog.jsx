@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchCars } from '../../redux/operations';
+
 
 function Catalog() {
   const [cars, setCars] = useState([]);
