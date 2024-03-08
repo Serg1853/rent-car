@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useGetAdvertsQuery } from '../../redux/operations';
+import { fetchCars } from '../../redux/operations';
 
 function Catalog() {
   const [cars, setCars] = useState([]);
-  const data = useGetAdvertsQuery();
+  const data = fetchCars();
   console.log('data', data);
   useEffect(() => {
     if (data) {

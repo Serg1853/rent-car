@@ -3,7 +3,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { carsApi } from './operations';
 
 const reducers = combineReducers({
-  [carsApi.reducerPath]: carsApi.reducer,
+ cars:
 });
 
 export const store = configureStore({
