@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Select from 'react-select';
 
 function CarFilter({ makes, prices, onFilterChange }) {
   const [selectedMake, setSelectedMake] = useState('');
@@ -53,6 +54,53 @@ function CarFilter({ makes, prices, onFilterChange }) {
     maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
   };
   onFilterChange(newFilters);
-}
 
+  return (
+    <div>
+      <div>
+        <label htmlFor="nameSelect">Car brand</label>
+        <Select
+          id="nameSelect"
+          placeholder="Enter the text"
+          value={selectedMake}
+          isClearable={true}
+          onChange={(selectedOption) => setSelectedMake(selectedOption)}
+          options={makeOptions}
+        />
+      </div>
+      <div>
+        <label htmlFor="priceSelect">Price / 1 hour</label>
+        <Select
+          id="priceSelect"
+          placeholder="To $"
+          value={
+            selectedPriceStep
+              ? { value: selectedPriceStep, label: selectedPriceLabel }
+              : null
+          }
+          onChange={handlePriceStepChange}
+          options={priceRangeOptions}
+        />
+      </div>
+      <form>
+        <label>Car mileage / km</label>
+        <div>
+          <input
+            type="text"
+            value={formatMileage(minValue)}
+            onChange={handleMinInputChange}
+          />
+          <span>From</span>
+          <input
+            type="text"
+            value={formatMileage(maxValue)}
+            onChange={handleMaxInputChange}
+          />
+          <span>To</span>
+        </div>
+      </form>
+      <button onClick={handleFilterClick}>Search</button>
+    </div>
+  );
+}
 export default CarFilter;

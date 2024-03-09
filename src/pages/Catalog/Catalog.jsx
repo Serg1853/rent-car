@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 function Catalog() {
   const [page, setPage] = useState(1);
   const [allCars, setAllCars] = useState([]);
@@ -78,7 +77,6 @@ function Catalog() {
     : [];
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);
-
 
   return <h1>Catalog page</h1>;
 }
