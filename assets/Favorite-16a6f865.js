@@ -1,4 +1,4 @@
-import{c as x,r as n,j as t}from"./index-47936ca9.js";import{n as o,s as d,C as f,L as g}from"./CarCard-e48a7be0.js";const u=o.div`
+import{c as x,r as n,j as t}from"./index-b025ba8a.js";import{n as o,s as d,C as f,L as g}from"./CarCard-bdb65649.js";const u=o.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
