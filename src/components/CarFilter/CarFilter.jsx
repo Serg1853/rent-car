@@ -86,26 +86,26 @@ function CarFilter({ makes, prices, onFilterChange }) {
               ...styles,
               width: '224px',
               height: '48px',
-              borderColor: 'rgba(18, 20, 23, 0.2)',
+              borderColor: 'rgba(20, 20, 20, 0.2)',
               border: 'none',
               borderRadius: '14px',
               padding: '8px',
               fontSize: '16px',
               fontFamily: 'Manrope',
-              backgroundColor: 'rgba(247, 247, 251, 1)',
+              backgroundColor: 'rgba(247, 247, 247, 1)',
               appearance: 'none',
             }),
             option: (styles, { isFocused }) => {
               return {
                 ...styles,
-                color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
+                color: isFocused ? 'black' : 'rgba(20, 20, 20, 0.2)',
                 fontFamily: 'Manrope',
               };
             },
 
             placeholder: (styles) => ({
               ...styles,
-              color: 'rgba(18, 20, 23, 1)',
+              color: 'rgba(20, 20, 20, 1)',
             }),
           }}
           components={{
@@ -131,26 +131,26 @@ function CarFilter({ makes, prices, onFilterChange }) {
               ...styles,
               width: '125',
               height: '48px',
-              borderColor: 'rgba(18, 20, 23, 0.2)',
+              borderColor: 'rgba(20, 20, 20, 0.2)',
               border: 'none',
               borderRadius: '14px',
               padding: '8px',
               fontSize: '16px',
               fontFamily: 'Manrope',
-              backgroundColor: 'rgba(247, 247, 251, 1)',
+              backgroundColor: 'rgba(247, 247, 247, 1)',
               appearance: 'none',
             }),
             option: (styles, { isFocused }) => {
               return {
                 ...styles,
-                color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
+                color: isFocused ? 'black' : 'rgba(20, 20, 20, 0.2)',
                 fontFamily: 'Manrope',
               };
             },
 
             placeholder: (styles) => ({
               ...styles,
-              color: 'rgba(18, 20, 23, 1)',
+              color: 'rgba(20, 20, 20, 1)',
             }),
           }}
           components={{

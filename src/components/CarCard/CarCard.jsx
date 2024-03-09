@@ -12,7 +12,7 @@ import {
   Item,
 } from './CarCard.styled';
 import HeartIcon from 'components/HeartIcon/HeartIcon';
-import BasicModal from 'components/Modal/Modal';
+import CarModal from 'components/Modal/Modal';
 
 export default function CarCard({ data }) {
   const [open, setOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function CarCard({ data }) {
         <Item>{data.accessories[0]}</Item>
       </List>
       <Button onClick={handleOpen} text="Learn more" width="274px" />
-      {open && <BasicModal open={open} onClose={handleClose} data={data} />}
+      {open && <CarModal open={open} onClose={handleClose} data={data} />}
     </Wrapper>
   );
 }

@@ -4,16 +4,16 @@ export const WrapperFilter = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 128px;
-  padding-right: 128px;
-  padding-top: 40px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 30px;
 `;
 
 export const WrapperList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px 29px;
+  gap: 50px 25px;
   margin-top: 50px;
   width: 1184px;
   margin-left: auto;
