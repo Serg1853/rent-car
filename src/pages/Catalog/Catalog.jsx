@@ -1,4 +1,13 @@
 import { useEffect, useState } from 'react';
+import {
+  useGetAdvertsQuery,
+  useGetCarsByPageQuery,
+} from '../../redux/operations';
+import { LoadMore, WrapperFilter, WrapperList } from './Catalog.styled';
+import Header from '../../components/Header/Header';
+import CarFilter from '../../components/CarFilter/CarFilter';
+import CarCard from '../../components/CarCard/CarCard';
+import { Loader } from '../../components/Loader/Loader';
 
 function Catalog() {
   const [page, setPage] = useState(1);
@@ -78,6 +87,45 @@ function Catalog() {
   const minMileage = Math.min(...mileage);
   const maxMileage = Math.max(...mileage);
 
-  return <h1>Catalog page</h1>;
+  return (
+    <>
+      {/* <Header /> */}
+      <WrapperFilter>
+        <CarFilter
+          makes={makes}
+          prices={prices}
+          minMileage={minMileage}
+          maxMileage={maxMileage}
+          onFilterChange={(newFilters) => {
+            setFilters(newFilters);
+            setIsFiltering(true);
+          }}
+          filters={filters}
+        />
+      </WrapperFilter>
+      <WrapperList>
+        {isFiltering ? (
+          filteredAdverts !== null && filteredAdverts.length > 0 ? (
+            filteredAdverts.map((car, index) => (
+              <CarCard key={index} data={car} />
+            ))
+          ) : (
+            <div>No matches found based on the chosen criteria.</div>
+          )
+        ) : error ? (
+          <>Oops, there was an error...</>
+        ) : isLoading ? (
+          <Loader />
+        ) : allCars.length > 0 ? (
+          allCars.map((car, index) => <CarCard key={index} data={car} />)
+        ) : null}
+        {!isFiltering && data && data.length >= 8 && (
+          <LoadMore variant="text" onClick={loadMore} disabled={isFetching}>
+            Load more
+          </LoadMore>
+        )}
+      </WrapperList>
+    </>
+  );
 }
 export default Catalog;

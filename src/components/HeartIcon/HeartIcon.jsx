@@ -1,8 +1,8 @@
 import Checkbox from '@mui/material/Checkbox';
-import { HeartFill, HeartStroke, HeartWrap } from './HeartIcon.styled';
+import { HeartFill, HeartStroke, HeartWrap } from './HeartIcon.style';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from 'redux/selectors';
-import { addFavorite, removeFavorite } from 'redux/slice';
+import { selectFavorites } from '../../redux/selectors';
+import { addFavorite, removeFavorite } from '../../redux/slice';
 
 export default function HeartIcon({ data }) {
   const dispatch = useDispatch();
