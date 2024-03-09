@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Close from '../../../public/icon-close.svg';
+import Close from '/public/icon-close.svg';
 import Button from 'components/Button/Button';
 import {
   Wrapper,

@@ -25,14 +25,14 @@ export const Image = styled.img`
 export const TitleWrap = styled.div`
   width: 274px;
   align-items: center;
-  color: #121417;
+  color: #d9dfe8;
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 `;
 
 export const Title = styled.h3`
-  color: #121417;
+  color: #71a6f4;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -46,7 +46,7 @@ export const Span = styled.span`
 `;
 
 export const Text = styled.p`
-  color: #121417;
+  color: #71a6f4;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;

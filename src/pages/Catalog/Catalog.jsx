@@ -4,7 +4,7 @@ import {
   useGetCarsByPageQuery,
 } from '../../redux/operations';
 import { LoadMore, WrapperFilter, WrapperList } from './Catalog.styled';
-import Header from '../../components/Header/Header';
+
 import CarFilter from '../../components/CarFilter/CarFilter';
 import CarCard from '../../components/CarCard/CarCard';
 import { Loader } from '../../components/Loader/Loader';
