@@ -15,7 +15,6 @@ export const StylesButton = muiStyled(Button)(({ theme, width }) => ({
 
 export const Text = styled.span`
   color: #ffffff;
-  font-family: Manrope;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

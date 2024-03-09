@@ -32,7 +32,7 @@ export const TitleWrap = styled.div`
 `;
 
 export const Title = styled.h3`
-  color: #71a6f4;
+  color: #000;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -46,7 +46,7 @@ export const Span = styled.span`
 `;
 
 export const Text = styled.p`
-  color: #71a6f4;
+  color: #000;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;

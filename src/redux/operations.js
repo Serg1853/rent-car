@@ -9,7 +9,7 @@ export const carsApi = createApi({
   tagTypes: ['Advert'],
   endpoints: (builder) => ({
     getCarsByPage: builder.query({
-      query: (page = 1) => `advert?page=${page}&limit=8`,
+      query: (page = 1) => `advert?page=${page}&limit=12`,
     }),
     getAdverts: builder.query({
       query: () => `/advert`,

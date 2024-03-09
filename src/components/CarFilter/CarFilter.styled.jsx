@@ -26,7 +26,6 @@ export const Form = styled.form`
 export const Label = styled.label`
   font-size: 14px;
   color: rgba(138, 138, 137, 1);
-  font-family: 'Manrope';
   padding-left: 5px;
   margin-bottom: 8px;
 `;
@@ -41,7 +40,6 @@ export const InputLeft = styled.input`
   border-radius: 14px 0 0 14px;
   padding-left: 0;
   text-indent: 70px;
-  font-family: 'Manrope';
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
 
@@ -59,7 +57,6 @@ export const InputRight = styled.input`
   border-radius: 0 14px 14px 0;
   padding-left: 0;
   text-indent: 45px;
-  font-family: 'Manrope';
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
 
@@ -74,7 +71,6 @@ export const SpanLeft = styled.span`
   left: 20px;
   top: 15px;
   z-index: 9;
-  font-family: 'Manrope';
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
 `;
@@ -85,7 +81,6 @@ export const SpanRight = styled.span`
   left: 180px;
   top: 15px;
   z-index: 9;
-  font-family: 'Manrope';
   color: rgba(18, 20, 23, 1);
   font-size: 18px;
 `;
