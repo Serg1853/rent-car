@@ -1,5 +1,18 @@
 import { useState } from 'react';
 import Select from 'react-select';
+import {
+  Container,
+  Form,
+  InputContainer,
+  InputLeft,
+  InputRight,
+  Label,
+  SelectContainer,
+  SpanLeft,
+  SpanRight,
+} from './CarFilter.styled';
+
+import Button from 'components/Button/Button';
 
 function CarFilter({ makes, prices, onFilterChange }) {
   const [selectedMake, setSelectedMake] = useState('');
@@ -40,25 +53,27 @@ function CarFilter({ makes, prices, onFilterChange }) {
     if (
       parseInt(minValue.replace(/,/g, ''), 10) >
       parseInt(maxValue.replace(/,/g, ''), 10)
-    )
+    ) {
       return;
-  };
+    }
 
-  const newFilters = {
-    make: selectedMake,
-    filteredPrices: filteredPrices.map((price) => ({
-      value: price,
-      label: `${price}`,
-    })),
-    minMileage: parseInt(minValue.replace(/,/g, ''), 10),
-    maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
+    const newFilters = {
+      make: selectedMake,
+      filteredPrices: filteredPrices.map((price) => ({
+        value: price,
+        label: `${price}`,
+      })),
+      minMileage: parseInt(minValue.replace(/,/g, ''), 10),
+      maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
+    };
+
+    onFilterChange(newFilters);
   };
-  onFilterChange(newFilters);
 
   return (
-    <div>
-      <div>
-        <label htmlFor="nameSelect">Car brand</label>
+    <Container>
+      <SelectContainer>
+        <Label htmlFor="nameSelect">Car brand</Label>
         <Select
           id="nameSelect"
           placeholder="Enter the text"
@@ -66,10 +81,41 @@ function CarFilter({ makes, prices, onFilterChange }) {
           isClearable={true}
           onChange={(selectedOption) => setSelectedMake(selectedOption)}
           options={makeOptions}
+          styles={{
+            control: (styles) => ({
+              ...styles,
+              width: '224px',
+              height: '48px',
+              borderColor: 'rgba(18, 20, 23, 0.2)',
+              border: 'none',
+              borderRadius: '14px',
+              padding: '8px',
+              fontSize: '16px',
+              fontFamily: 'Manrope',
+              backgroundColor: 'rgba(247, 247, 251, 1)',
+              appearance: 'none',
+            }),
+            option: (styles, { isFocused }) => {
+              return {
+                ...styles,
+                color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
+                fontFamily: 'Manrope',
+              };
+            },
+
+            placeholder: (styles) => ({
+              ...styles,
+              color: 'rgba(18, 20, 23, 1)',
+            }),
+          }}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
         />
-      </div>
-      <div>
-        <label htmlFor="priceSelect">Price / 1 hour</label>
+      </SelectContainer>
+
+      <SelectContainer>
+        <Label htmlFor="priceSelect">Price / 1 hour</Label>
         <Select
           id="priceSelect"
           placeholder="To $"
@@ -80,27 +126,58 @@ function CarFilter({ makes, prices, onFilterChange }) {
           }
           onChange={handlePriceStepChange}
           options={priceRangeOptions}
+          styles={{
+            control: (styles) => ({
+              ...styles,
+              width: '125',
+              height: '48px',
+              borderColor: 'rgba(18, 20, 23, 0.2)',
+              border: 'none',
+              borderRadius: '14px',
+              padding: '8px',
+              fontSize: '16px',
+              fontFamily: 'Manrope',
+              backgroundColor: 'rgba(247, 247, 251, 1)',
+              appearance: 'none',
+            }),
+            option: (styles, { isFocused }) => {
+              return {
+                ...styles,
+                color: isFocused ? 'black' : 'rgba(18, 20, 23, 0.2)',
+                fontFamily: 'Manrope',
+              };
+            },
+
+            placeholder: (styles) => ({
+              ...styles,
+              color: 'rgba(18, 20, 23, 1)',
+            }),
+          }}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
         />
-      </div>
-      <form>
-        <label>Car mileage / km</label>
-        <div>
-          <input
+      </SelectContainer>
+
+      <Form>
+        <Label>Car mileage / km</Label>
+        <InputContainer>
+          <InputLeft
             type="text"
             value={formatMileage(minValue)}
             onChange={handleMinInputChange}
           />
-          <span>From</span>
-          <input
+          <SpanLeft>From</SpanLeft>
+          <InputRight
             type="text"
             value={formatMileage(maxValue)}
             onChange={handleMaxInputChange}
           />
-          <span>To</span>
-        </div>
-      </form>
-      <button onClick={handleFilterClick}>Search</button>
-    </div>
+          <SpanRight>To</SpanRight>
+        </InputContainer>
+      </Form>
+      <Button text="Search" onClick={handleFilterClick} width="135px" />
+    </Container>
   );
 }
 export default CarFilter;
