@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/selectors';
 import { useEffect, useState } from 'react';
 import { Text, Wrapper, WrapperList } from './Favorite.styled';
-import CarCard from '../../components/CarCard/CarCard';
+import CarCard from 'components/CarCard/CarCard';
 import { LoadMore } from '../Catalog/Catalog.styled';
 
 function Favorite() {

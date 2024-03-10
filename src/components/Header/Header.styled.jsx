@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const HeaderBar = styled.div`
+export const AppBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

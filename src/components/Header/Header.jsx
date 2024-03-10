@@ -1,15 +1,15 @@
-import { HeaderBar, Link, Nav } from './Header.styled';
+import { AppBar, Link, Nav } from './Header.styled';
 
 function Header() {
   return (
     <>
-      <HeaderBar>
+      <AppBar>
         <Nav>
           <Link to="/">Home</Link>
           <Link to="catalog">Catalog</Link>
           <Link to="favorite"> Favorite</Link>
         </Nav>
-      </HeaderBar>
+      </AppBar>
     </>
   );
 }

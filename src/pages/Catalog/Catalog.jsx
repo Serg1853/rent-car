@@ -5,9 +5,9 @@ import {
 } from '../../redux/operations';
 import { LoadMore, WrapperFilter, WrapperList } from './Catalog.styled';
 
-import CarFilter from '../../components/CarFilter/CarFilter';
-import CarCard from '../../components/CarCard/CarCard';
-import { Loader } from '../../components/Loader/Loader';
+import CarFilter from 'components/CarFilter/CarFilter';
+import CarCard from 'components/CarCard/CarCard';
+import { Loader } from 'components/Loader/Loader';
 
 function Catalog() {
   const [page, setPage] = useState(1);
