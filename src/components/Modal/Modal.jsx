@@ -1,5 +1,4 @@
 import { Box, Modal } from '@mui/material';
-import Close from '/public/icon-close.svg';
 import Button from 'components/Button/Button';
 import {
   Wrapper,
@@ -43,7 +42,7 @@ function CarModal({ open, onClose, data }) {
         <Box sx={style}>
           <Wrapper>
             <CloseIcon onClick={onClose}>
-              <IconX src={Close} alt="Close button" />
+              <IconX src="/icon-close.svg" alt="Close button" />
             </CloseIcon>
             <Image src={data.img} alt={data.make} width="461" height="248" />
             <Wrap>
