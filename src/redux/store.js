@@ -25,6 +25,7 @@ const persistConfig = {
   version: 1,
   storage,
   whitelist: ['favorites'],
+  blacklist: [carsApi.reducerPath],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
